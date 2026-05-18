@@ -51,7 +51,7 @@ class Settings(BaseSettings):
 
     # ── Email (Resend transactional API — outbound only) ───────────────────
     # Cold outreach sends from support@example.com — already warm
-    # from the Glitch sites' transactional Resend wire, so Gmail's
+    # from the  sites transactional Resend wire, so Gmail's
     # classifier puts it in Primary on landing. Display name "Tejas" gives
     # the recipient a human-named From line. Replies route back to support@
     # where the operator already reads.

@@ -59,7 +59,7 @@ fi
 # ── Uninstall path ──────────────────────────────────────────────────────────
 if [[ "$ACTION" == "uninstall" ]]; then
   if [[ -z "$UNINSTALL_UNIT" ]]; then
-    echo "--uninstall requires a unit name (e.g. glitch-meta-ads-sync.service)" >&2
+    echo "--uninstall requires a unit name (e.g. ai-meta-ads-sync.service)" >&2
     exit 2
   fi
   path="$DEST_DIR/$UNINSTALL_UNIT"

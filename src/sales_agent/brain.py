@@ -9,7 +9,7 @@ Postgres table stays as the agent's private vector-searchable
 memory. The brain mirror is the sibling-visible coordination layer.
 
 Wiring contract:
-  - Env `GLITCH_BRAIN_MCP_URL` overrides the brain URL.
+  - Env `BRAIN_MCP_URL` overrides the brain URL.
   - Env `SALES_AGENT_BRAND_SLUG` names the brand the Sales agent is
     currently running for (e.g. `example-tenant`). The bridge then
     looks up `BRAIN_TOKEN_BSK_003_<UPPER_SNAKED_SLUG>` from env to
@@ -44,7 +44,7 @@ log = logging.getLogger(__name__)
 _DEFAULT_BRAIN_URL = "http://127.0.0.1:3107/mcp"
 _BRAIN_TOKEN_PREFIX = "BRAIN_TOKEN_BSK_003_"
 _BRAIN_TOKEN_LEGACY = "BRAIN_TOKEN_BSK_003"
-_BRAIN_URL_ENV = "GLITCH_BRAIN_MCP_URL"
+_BRAIN_URL_ENV = "BRAIN_MCP_URL"
 _BRAND_SLUG_ENV = "SALES_AGENT_BRAND_SLUG"
 
 _NON_ENV_CHARS = re.compile(r"[^A-Z0-9_]")

@@ -12,6 +12,6 @@ Public surface:
 - `pipelines.ensure_pipeline()`        — idempotent bootstrap (one-shot).
 
 The pipeline label comes from `HUBSPOT_PIPELINE_NAME` so future productized
-agents (Glitch Trade, Glitch Edge variants) point at their own pipeline in
+agents (other product agents) point at their own pipeline in
 the same portal without code changes.
 """

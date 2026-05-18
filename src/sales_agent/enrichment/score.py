@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 # observation of the cohort — add as new chains surface.
 CHAIN_KEYWORDS: tuple[str, ...] = (
     "canna cabana", "high tide",                # <competitor>.
-    "spiritleaf",
+    "competitor-a",
     "fire & flower", "fire and flower", "fireandflower",
     "one plant",
     "sessions <industry>",
@@ -42,7 +42,7 @@ CHAIN_KEYWORDS: tuple[str, ...] = (
     "matchbox <industry>",
     "value buds",
     "nova <industry>",
-    "tokyo smoke",
+    "competitor-b",
     "fogtown",
     "hexo",
     "sundial",
