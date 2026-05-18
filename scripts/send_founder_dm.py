@@ -10,7 +10,7 @@ Usage:
     PYTHONPATH=src python3 scripts/send_founder_dm.py \\
         --to guravsuyog123@gmail.com \\
         --to-name "Suyog" \\
-        --subject "Suyog — the Glitch Vibe Kit (1 download, then we'll talk)" \\
+        --subject "<recipient-name> — Example Vibe Kit (1 download, then we'll talk)" \\
         --body-file /home/support/ai_marketing_stack-sales-agent-private/scripts/_outbox/suyog.md
 
 The body-file is markdown; we send it as plain text + a minimal HTML

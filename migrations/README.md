@@ -3,7 +3,7 @@
 Raw-SQL migrations applied with `psql`. Numbered `NNNN_<slug>.sql`; apply
 in numerical order; never delete or rewrite a committed migration.
 
-Same pattern as [ai_marketing_stack-ads-agent](https://github.com/glitch-exec-labs/ai_marketing_stack-ads-agent/tree/main/migrations).
+Same pattern as [ai_marketing_stack-ads-agent](https://gitlab.com/glitch-grow/ai-ads-agent_marketing_stack-ads-agent/tree/main/migrations).
 
 ## Apply
 

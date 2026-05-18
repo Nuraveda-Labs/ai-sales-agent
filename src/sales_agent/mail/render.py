@@ -146,7 +146,7 @@ def _link_to_html(text: str) -> str:
             f'border-bottom:1px solid #cbd5e1;">{url}</a>'
         )
 
-    return re.sub(r"https?://[^\s<>\"]+|exotic420budz\.com", replace, text)
+    return re.sub(r"https?://[^\s<>\"]+|example\.com", replace, text)
 
 
 def render_branded_html(
