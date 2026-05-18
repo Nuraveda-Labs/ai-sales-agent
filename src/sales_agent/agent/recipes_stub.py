@@ -1,6 +1,6 @@
 """Placeholder recipes — public, deliberately generic.
 
-Real Glitch Budz copy lives in the private `ai_marketing_stack_sales_playbook`
+Real Example Brand copy lives in the private `ai_marketing_stack_sales_playbook`
 package and overrides this stub at import time (see `sales_agent.agent.recipes`).
 
 Data model (v3):

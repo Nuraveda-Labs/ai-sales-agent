@@ -4,14 +4,14 @@
 -- old column stays in place (audit trail of the original v1 detector +
 -- backward compatibility for any read paths that haven't migrated).
 --
--- Enum values reflect the actual Toronto cannabis e-commerce landscape
+-- Enum values reflect the actual <region> e-commerce landscape
 -- observed across 77 leads:
 --   none      — no website at all (or fetch failed)
 --   brochure  — apex on Squarespace / Wix / WordPress with no embedded
 --                shop or external shop subdomain
---   dutchie   — Dutchie iframe / dedicated dutchie.com storefront
---   blaze     — Blaze POS + ecom (shop.* subdomain pattern, /menu/ paths)
---   tendypos  — TendyPOS via UnoApp (tendy-*.api.unoapp.io)
+--   dutchie   — <tool>.com storefront
+--   blaze     — <tool>.* subdomain pattern, /menu/ paths)
+--   tendypos  — <tool>.api.unoapp.io)
 --   shopify   — Shopify-powered (mostly chains; wrong ICP)
 --   custom    — anything else not classifiable into the above
 --

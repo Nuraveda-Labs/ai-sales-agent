@@ -23,7 +23,7 @@ from string import Template
 from sales_agent.config import settings
 from sales_agent.db.models import EmailDraft, Lead
 
-DEMO_URL = "https://exotic420budz.com"
+DEMO_URL = "https://example-brand.com"
 LANDING_URL = "https://grow.example.com/budz"
 # Full name on the sign-off — the body voice is casual lowercase but the
 # signature is a real name (Title Case proper noun) so the recipient
@@ -170,7 +170,7 @@ def render_branded_html(
         else ""
     )
     preview = preview_text or (
-        f"$999 setup, $99/mo flat — {lead.business_name} on a real cannabis storefront."
+        f"<price> setup, <recurring-price> flat — {lead.business_name} on a real <industry> storefront."
     )
 
     unsubscribe_url = f"mailto:{settings.gmail_sender_email}?subject=stop"

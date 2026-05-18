@@ -239,7 +239,7 @@ async def self_test() -> str:
         "from":     _from_header(),
         "to":       [settings.resend_from_email],
         "reply_to": settings.resend_reply_to,
-        "subject":  "Glitch Budz sales agent — self-test",
+        "subject":  "Example Brand sales agent — self-test",
         "text":     (
             "If you're reading this, the sales agent's Resend wire is healthy.\n\n"
             "— sales agent self-test (programmatic)\n"

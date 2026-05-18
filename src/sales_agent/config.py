@@ -72,7 +72,7 @@ class Settings(BaseSettings):
 
     # ── CASL footer ────────────────────────────────────────────────────────
     casl_sender_name: str = "an open-source project (Nuraveda)"
-    casl_sender_address: str = "77 Huntley St, Toronto, ON"
+    casl_sender_address: str = "77 Huntley St, <region>, ON"
 
     # ── Discord ────────────────────────────────────────────────────────────
     discord_bot_token: str = ""
@@ -99,7 +99,7 @@ class Settings(BaseSettings):
 
     # ── HubSpot CRM mirror ────────────────────────────────────────────────
     hubspot_pat: str = ""                          # Private App token
-    hubspot_pipeline_name: str = "Glitch Budz"
+    hubspot_pipeline_name: str = "Example Brand"
     hubspot_sync_enabled: bool = False
     hubspot_portal_id: str = ""                    # optional, informational
 

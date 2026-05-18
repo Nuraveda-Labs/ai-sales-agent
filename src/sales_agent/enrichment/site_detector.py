@@ -1,16 +1,16 @@
 """Detect a shop's POS / e-commerce platform from its website.
 
 Classifies into a `PosPlatform` enum that the recipe library keys on.
-The categories were derived empirically from the 77-lead Toronto cohort
+The categories were derived empirically from the 77-lead <region> cohort
 probe (see `migrations/0003_pos_platform.sql` header for definitions).
 
 Detection priority (highest signal first):
     tendypos > dutchie > blaze > shopify > brochure > custom > none
 
 We follow shop subdomains (`shop.*`, `order.*`, `store.*`, `menu.*`)
-because for cannabis retail the apex domain is often a Squarespace/WP
+because for <industry> retail the apex domain is often a Squarespace/WP
 brochure while the actual e-commerce backend lives on a subdomain
-hosted by Dutchie / Blaze / TendyPOS. Skipping the subdomain hides
+hosted by <tool>. Skipping the subdomain hides
 the platform that actually matters for the pitch.
 """
 
@@ -61,7 +61,7 @@ _SHOP_LINK_RE = re.compile(
     re.I,
 )
 
-# Blaze fallback: known Blaze shop URLs follow `/menu/<location>/` path
+# <tool>
 # even when the bare `blaze.me` substring isn't in the HTML.
 _BLAZE_PATH_HINT = re.compile(
     r'https?://shop\.[a-z0-9.\-]+/menu/[a-z0-9.\-/_]+', re.I,
@@ -94,7 +94,7 @@ def _classify(html_combined: str, shop_url: str | None) -> PosPlatform | None:
     for tag, rx in _POS_PATTERNS:
         if rx.search(html_combined):
             return tag
-    # Blaze fallback by URL shape, when patterns missed.
+    # <tool>, when patterns missed.
     if shop_url and _BLAZE_PATH_HINT.search(shop_url):
         return "blaze"
     return None

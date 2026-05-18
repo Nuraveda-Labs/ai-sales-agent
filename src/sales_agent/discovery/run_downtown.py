@@ -1,17 +1,17 @@
-"""Cannabis retailer discovery — Downtown Toronto.
+"""<industry> retailer discovery — Downtown <region>.
 
 Targets the high-density downtown corridors directly with neighbourhood-
 specific queries instead of relying on Google's fuzzy geographic
-matching on broader "Toronto" terms (which is what fed Old Toronto
-leads into the North York / GTA passes incidentally).
+matching on broader "<region>" terms (which is what fed Old <region>
+leads into the <region> / GTA passes incidentally).
 
 Coverage:
-- Generic downtown ("downtown Toronto")
-- Major corridors with the highest cannabis-retail density:
+- Generic downtown ("downtown <region>")
+- Major corridors with the highest <industry>-retail density:
   Yonge Street, Queen Street West / Queen West, Kensington Market,
   Liberty Village, King Street West / King West, The Annex,
   Dundas West, Roncesvalles, Leslieville, The Beach, Distillery
-- Two query templates per corridor (cannabis / dispensary)
+- Two query templates per corridor (<industry> / dispensary)
 
 Dedup is automatic via LeadRepo.upsert (source, source_id) — anything
 the GTA pass already pulled stays untouched, only new ones land.
@@ -38,22 +38,22 @@ logger = logging.getLogger(__name__)
 
 # Each entry is the location-bias term that goes into the query string.
 CORRIDORS = (
-    "downtown Toronto",
-    "Yonge Street Toronto",
-    "Queen Street West Toronto",
-    "Kensington Market Toronto",
-    "Liberty Village Toronto",
-    "King Street West Toronto",
-    "The Annex Toronto",
-    "Dundas West Toronto",
-    "Roncesvalles Toronto",
-    "Leslieville Toronto",
-    "The Beaches Toronto",
-    "Distillery District Toronto",
+    "downtown <region>",
+    "Yonge Street <region>",
+    "Queen Street West <region>",
+    "Kensington Market <region>",
+    "Liberty Village <region>",
+    "King Street West <region>",
+    "The Annex <region>",
+    "Dundas West <region>",
+    "Roncesvalles <region>",
+    "Leslieville <region>",
+    "The Beaches <region>",
+    "Distillery District <region>",
 )
 
 QUERY_TEMPLATES = (
-    "cannabis store {area}",
+    "<industry> store {area}",
     "dispensary {area}",
 )
 

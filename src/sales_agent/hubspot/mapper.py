@@ -72,7 +72,7 @@ def lead_to_deal_props(
 ) -> dict[str, str]:
     """Build the HubSpot Deal properties payload."""
     return {
-        "dealname": f"Glitch Budz · {lead.business_name}",
+        "dealname": f"Example Brand · {lead.business_name}",
         "pipeline": pipeline_id,
         "dealstage": stage_id,
     }

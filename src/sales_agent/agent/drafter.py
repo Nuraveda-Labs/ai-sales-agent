@@ -90,7 +90,7 @@ def render_user_prompt(lead: Lead, *, prior_context: str = "") -> str:
         "",
         "## Lead facts",
         f"- shop_name: {lead.business_name}",
-        f"- neighbourhood: {lead.city or 'Toronto'}",
+        f"- neighbourhood: {lead.city or '<region>'}",
         f"- province: {lead.province}",
         f"- pos_platform: {platform}",
         f"- score: {lead.score}/100",
@@ -148,7 +148,7 @@ def _clean_host(url: str | None) -> str:
     """Bare hostname for personalization: drop scheme + www. + path/query.
 
     Hunny Pot's stored website_url was the full deep-link
-    `thehunnypot.com/4936-yonge-street-north-york-cannabis-menu` —
+    `thehunnypot.com/4936-yonge-street-north-york-<industry>-menu` —
     we want just `thehunnypot.com` in cold-email prose.
 
     Returns empty string when the lead has no URL.

@@ -7,7 +7,7 @@ it perfectly right.
 
 Scoring mental model:
 - Independents > chains. Chains have corporate procurement and won't
-  switch on a $99/mo pitch.
+  switch on a <recurring-price> pitch.
 - Reachability matters. No email = no send = no value, regardless of
   fit.
 - Site weakness signals fit. Linktree / no-site / Wix shops feel the
@@ -29,19 +29,19 @@ logger = logging.getLogger(__name__)
 # is case-insensitive against business_name. Maintained by hand from
 # observation of the cohort — add as new chains surface.
 CHAIN_KEYWORDS: tuple[str, ...] = (
-    "canna cabana", "high tide",                # Canna Cabana / High Tide Inc.
+    "canna cabana", "high tide",                # <competitor>.
     "spiritleaf",
     "fire & flower", "fire and flower", "fireandflower",
     "one plant",
-    "sessions cannabis",
+    "sessions <industry>",
     "hunny pot",
     "friendly stranger",
-    "fika cannabis",
+    "fika <industry>",
     "ashario",
-    "pop's cannabis",
-    "matchbox cannabis",
+    "pop's <industry>",
+    "matchbox <industry>",
     "value buds",
-    "nova cannabis",
+    "nova <industry>",
     "tokyo smoke",
     "fogtown",
     "hexo",
@@ -49,7 +49,7 @@ CHAIN_KEYWORDS: tuple[str, ...] = (
     "stash & co",
     "north of 49",
     "weedjar",
-    "moksha cannabis",                          # 3+ locations in cohort
+    "moksha <industry>",                          # 3+ locations in cohort
     "fika",
     "purple moose",
     "maryjane",                                 # MaryJane's Weed Dispensary
@@ -58,14 +58,14 @@ CHAIN_KEYWORDS: tuple[str, ...] = (
 # Platform fit bonus. After the Apr-2026 product reframe, the pitch is
 # "we add a premium storefront on top of what you have, with AI SEO."
 # Brochure / no-site shops get the standalone pitch (most acute pain).
-# Dutchie / Blaze / TendyPOS shops get the additive-layer pitch (real
+# <tool>
 # but slower-burn — they have something working).
 # Shopify shops are almost always chains; bench them out of the queue.
 _PLATFORM_BONUS: dict[str, int] = {
     "none":      25,   # no site at all → easiest "we'll get you online" pitch
     "brochure":  25,   # Squarespace/Wix/WP without real ordering
     "dutchie":   20,   # working stack, AI SEO upgrade pitch lands
-    "blaze":     20,   # same shape as Dutchie
+    "blaze":     20,   # same shape as <tool>
     "tendypos":  20,   # same shape
     "shopify":  -50,   # chains; wrong ICP
     "custom":     0,

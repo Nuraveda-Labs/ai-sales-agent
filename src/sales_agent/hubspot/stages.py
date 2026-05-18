@@ -1,4 +1,4 @@
-"""Pipeline + stage definitions for the Glitch Budz HubSpot pipeline.
+"""Pipeline + stage definitions for the Example Brand HubSpot pipeline.
 
 `PIPELINE_STAGES` is the source of truth: `pipelines.ensure_pipeline()`
 creates exactly these stages in this order, and `STATUS_TO_STAGE_LABEL`

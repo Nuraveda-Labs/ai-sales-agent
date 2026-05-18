@@ -1,4 +1,4 @@
-"""One-shot North York cannabis-retailer discovery.
+"""One-shot <region> <industry>-retailer discovery.
 
 Runs four text-search variants against Places API (New), dedups on
 `place.id`, maps to `LeadCreate`, and upserts into `sales_agent.leads`.
@@ -26,10 +26,10 @@ logger = logging.getLogger(__name__)
 # Text search beats nearby search for retail discovery — the geographic
 # intent is in the query and Places (New) ranks by relevance to the text.
 QUERIES: tuple[str, ...] = (
-    "cannabis store North York Toronto",
-    "cannabis store York Toronto",
-    "dispensary North York Toronto",
-    "weed store North York Toronto",
+    "<industry> store <region> <region>",
+    "<industry> store York <region>",
+    "dispensary <region> <region>",
+    "weed store <region> <region>",
 )
 
 

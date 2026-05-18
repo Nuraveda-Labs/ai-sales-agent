@@ -243,7 +243,7 @@ async def self_test() -> str:
     payload = _build_plain_message(
         to_addr=settings.gmail_subject_user,
         reply_to=settings.gmail_subject_user,
-        subject="Glitch Budz sales agent — Gmail Send self-test",
+        subject="Example Brand sales agent — Gmail Send self-test",
         body_text=(
             "Programmatic self-test. If you read this, the Gmail Send wire "
             "via service-account domain-wide delegation is healthy.\n\n"

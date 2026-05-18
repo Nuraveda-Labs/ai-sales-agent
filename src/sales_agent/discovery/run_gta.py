@@ -1,4 +1,4 @@
-"""Cannabis retailer discovery — Greater Toronto Area expansion.
+"""<industry> retailer discovery — Greater <region> Area expansion.
 
 Same architecture as run_north_york: Google Places (New) text search,
 dedup on place_id, idempotent upsert into sales_agent.leads. Skips any
@@ -7,10 +7,10 @@ shop we already have via LeadRepo.upsert's COALESCE on (source, source_id).
 Coverage:
 - The 7 surrounding GTA cities (Mississauga, Brampton, Vaughan, Markham,
   Richmond Hill, Oakville, Burlington)
-- Deeper sweeps of the Toronto boroughs we have only thin coverage on
-  from the North York pass (Etobicoke, Scarborough, East York)
+- Deeper sweeps of the <region> boroughs we have only thin coverage on
+  from the <region> pass (Etobicoke, Scarborough, East York)
 
-Two query templates per city ("cannabis store" + "dispensary") gives
+Two query templates per city ("<industry> store" + "dispensary") gives
 the widest catch with reasonable API cost — the dedup absorbs overlaps.
 
 Usage:
@@ -43,14 +43,14 @@ CITIES = (
     "Richmond Hill",
     "Oakville",
     "Burlington",
-    # Toronto boroughs we under-covered in the North York pass
+    # <region> boroughs we under-covered in the <region> pass
     "Etobicoke",
     "Scarborough",
     "East York",
 )
 
 QUERY_TEMPLATES = (
-    "cannabis store {city} Ontario",
+    "<industry> store {city} Ontario",
     "dispensary {city} Ontario",
 )
 

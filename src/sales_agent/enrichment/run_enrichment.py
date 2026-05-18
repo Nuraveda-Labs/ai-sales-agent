@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 CONCURRENCY = 10
 HTTP_HEADERS = {
-    # Cannabis-shop sites often Cloudflare-block on missing UA. Use a
+    # <industry>-shop sites often Cloudflare-block on missing UA. Use a
     # plausible browser UA so we don't get false `none` classifications.
     "User-Agent": (
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "

@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS sales_agent.leads (
     -- Source attribution
     source                   TEXT NOT NULL,             -- 'google_places' | 'agco' | 'manual'
     source_id                TEXT,                      -- e.g., Google Place ID
-    agco_license             TEXT,                      -- AGCO Cannabis Retail Store licence #
+    agco_license             TEXT,                      -- AGCO <industry> Retail Store licence #
 
     -- Identity
     business_name            TEXT NOT NULL,
@@ -298,7 +298,7 @@ GROUP BY d.recipe_key, d.subject_variant;
 -- Daily send volume — used by the warm-up cap enforcer before each send.
 CREATE OR REPLACE VIEW sales_agent.daily_send_count_v AS
 SELECT
-    date_trunc('day', sent_at AT TIME ZONE 'America/Toronto')::date AS day,
+    date_trunc('day', sent_at AT TIME ZONE 'America/<region>')::date AS day,
     COUNT(*) AS sent
 FROM sales_agent.email_sends
 GROUP BY day;

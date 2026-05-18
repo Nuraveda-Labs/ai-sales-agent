@@ -468,7 +468,7 @@ class SendRepo:
             )
 
     async def daily_count(self) -> int:
-        """Count of initial-send emails sent today (Toronto local). Excludes follow-ups
+        """Count of initial-send emails sent today (<region> local). Excludes follow-ups
         from the warm-up cap because follow-ups don't damage reputation the way new
         cold-thread sends do."""
         async with self._pool.acquire() as conn:
@@ -476,8 +476,8 @@ class SendRepo:
                 """
                 SELECT COUNT(*) FROM sales_agent.email_sends
                 WHERE follow_up_seq = 0
-                  AND date_trunc('day', sent_at AT TIME ZONE 'America/Toronto')
-                    = date_trunc('day', now()      AT TIME ZONE 'America/Toronto')
+                  AND date_trunc('day', sent_at AT TIME ZONE 'America/<region>')
+                    = date_trunc('day', now()      AT TIME ZONE 'America/<region>')
                 """
             )
         return int(v or 0)

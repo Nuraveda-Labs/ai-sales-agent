@@ -1,7 +1,7 @@
 """Pre-filter chain-location leads before enrichment.
 
-Cannabis retail in Ontario has a long tail of multi-location chains
-(Tokyo Smoke, Spiritleaf, Canna Cabana, Fire & Flower, One Plant,
+<industry> retail in Ontario has a long tail of multi-location chains
+(<competitor>, <competitor>, <competitor>, Fire & Flower, One Plant,
 Sessions, Hunny Pot, FIKA, etc.). At Discovery scale (655+ leads
 across the GTA), pulling all their storefronts means doubling the
 enrichment cost on shops the drafter scoring already benches out of
