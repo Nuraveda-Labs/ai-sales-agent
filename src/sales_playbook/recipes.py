@@ -1,4 +1,4 @@
-"""Calibrated recipes for Glitch Budz outbound — v9 (creative-rewrite pass).
+"""Calibrated recipes for Example Brand outbound — v9 (creative-rewrite pass).
 
 This pass integrates the creative writer's rewrite from Apr 30 2026.
 Punchier, tighter, 30-50 words. Markdown link syntax stripped to bare
@@ -7,7 +7,7 @@ hostnames (recipes are plain text only — see `voice rules` below).
 Voice rules (locked):
 - Lead with the STOREFRONT product. AI SEO is a bonus, not the headline.
 - Lowercase prose; proper nouns kept cased (Tokyo Smoke, Spiritleaf,
-  Dutchie, Blaze, TendyPOS, ChatGPT, Perplexity, Toronto, Interac).
+  Dutchie, Blaze, TendyPOS, ChatGPT, Perplexity, <region>, Interac).
 - "hey," opener every time.
 - First-person singular ("i").
 - 30-50 word body. Plain text. No HTML, no markdown links.
@@ -102,7 +102,7 @@ _BROCHURE_HOOKS = (
         ),
         opener="hey,",
         body=(
-            "agencies quote most Toronto cannabis shops $50k+ and 4 months "
+            "agencies quote most local shops $50k+ and 4 months "
             "to build a proper storefront.\n\n"
             "i deliver the same quality in 48 hours for a fraction of "
             "that.\n\n"
@@ -118,7 +118,7 @@ _BROCHURE_HOOKS = (
         opener="hey,",
         body=(
             "when someone asks ChatGPT or Perplexity for cannabis in "
-            "Toronto, the big chains like Tokyo Smoke and Spiritleaf get "
+            "<region>, the big chains like Tokyo Smoke and Spiritleaf get "
             "mentioned. independent shops rarely do.\n\n"
             "i build storefronts that actually get picked up by ai.\n\n"
             f"{_ctas()}"
@@ -170,7 +170,7 @@ _DUTCHIE_HOOKS = (
         opener="hey,",
         body=(
             "when someone asks ChatGPT or Perplexity for cannabis in "
-            "Toronto, the big chains like Tokyo Smoke and Spiritleaf get "
+            "<region>, the big chains like Tokyo Smoke and Spiritleaf get "
             "mentioned. independent shops rarely do.\n\n"
             "i build storefronts that actually get picked up by ai — on "
             "top of your existing Dutchie checkout.\n\n"
@@ -223,7 +223,7 @@ _BLAZE_HOOKS = (
         opener="hey,",
         body=(
             "shoppers are increasingly asking ChatGPT and Perplexity for "
-            "\"best cannabis Toronto\" instead of Google.\n\n"
+            "\"best cannabis <region>\" instead of Google.\n\n"
             "most template or hosted sites aren't properly indexed by ai "
             "tools. i fix that — without you leaving Blaze.\n\n"
             f"{_ctas()}"
@@ -274,7 +274,7 @@ _TENDYPOS_HOOKS = (
         ),
         opener="hey,",
         body=(
-            "agencies quote most Toronto cannabis shops $50k+ and 4 months "
+            "agencies quote most local shops $50k+ and 4 months "
             "to build a proper storefront on top of their pos.\n\n"
             "i deliver the same quality in 48 hours for a fraction of "
             "that. TendyPOS keeps inventory.\n\n"
@@ -311,7 +311,7 @@ _NONE_HOOKS = (
         ),
         opener="hey,",
         body=(
-            "agencies quote most Toronto cannabis shops $50k+ and 4 months "
+            "agencies quote most local shops $50k+ and 4 months "
             "to build a proper storefront.\n\n"
             "i deliver the same quality in 48 hours for a fraction of "
             "that.\n\n"
@@ -327,7 +327,7 @@ _NONE_HOOKS = (
         opener="hey,",
         body=(
             "when someone asks ChatGPT or Perplexity for cannabis in "
-            "Toronto, the big chains like Tokyo Smoke and Spiritleaf get "
+            "<region>, the big chains like Tokyo Smoke and Spiritleaf get "
             "mentioned. independent shops rarely do.\n\n"
             "i build storefronts that actually get picked up by ai.\n\n"
             f"{_ctas()}"
@@ -348,7 +348,7 @@ _SHOPIFY_HOOKS = (
         opener="hey,",
         body=(
             "shoppers are increasingly asking ChatGPT and Perplexity for "
-            "\"best cannabis Toronto\" instead of Google.\n\n"
+            "\"best cannabis <region>\" instead of Google.\n\n"
             "most Shopify cannabis templates aren't properly indexed by ai "
             "tools. i build cannabis-native storefronts that are.\n\n"
             f"{_ctas()}"
@@ -384,7 +384,7 @@ _CUSTOM_HOOKS = (
         opener="hey,",
         body=(
             "shoppers are increasingly asking ChatGPT and Perplexity for "
-            "\"best cannabis Toronto\" instead of Google.\n\n"
+            "\"best cannabis <region>\" instead of Google.\n\n"
             "most template or custom sites aren't properly indexed by ai "
             "tools. i fix that.\n\n"
             f"{_ctas()}"
@@ -399,7 +399,7 @@ _CUSTOM_HOOKS = (
         opener="hey,",
         body=(
             "when someone asks ChatGPT or Perplexity for cannabis in "
-            "Toronto, the big chains like Tokyo Smoke and Spiritleaf get "
+            "<region>, the big chains like Tokyo Smoke and Spiritleaf get "
             "mentioned. independent shops rarely do.\n\n"
             "i build storefronts that actually get picked up by ai.\n\n"
             f"{_ctas()}"
