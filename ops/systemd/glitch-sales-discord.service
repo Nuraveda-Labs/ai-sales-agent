@@ -1,0 +1,20 @@
+[Unit]
+Description=AI Sales Agent — Discord HITL bot (long-running gateway)
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=support
+Group=support
+WorkingDirectory=/home/support/ai_marketing_stack-sales-agent-private
+EnvironmentFile=/home/support/ai_marketing_stack-sales-agent-private/.env
+ExecStart=/home/support/ai_marketing_stack-sales-agent-private/.venv/bin/python -m sales_agent.discord.bot
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=glitch-sales-discord
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=AI Sales Agent — discovery scan (Google Places)
+After=network.target postgresql.service
+
+[Service]
+Type=oneshot
+User=support
+Group=support
+WorkingDirectory=/home/support/ai_marketing_stack-sales-agent-private
+EnvironmentFile=/home/support/ai_marketing_stack-sales-agent-private/.env
+ExecStart=/home/support/ai_marketing_stack-sales-agent-private/.venv/bin/python -m sales_agent.discovery.run_north_york
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=glitch-sales-discovery
+TimeoutStartSec=900

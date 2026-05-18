@@ -1,0 +1,22 @@
+[Unit]
+Description=AI Sales Agent — send approved drafts (LIVE EMAILS)
+After=network.target postgresql.service
+# Intentionally NOT `Wants=glitch-sales-discord.service` even though
+# the drafter+HITL+send pipeline is one logical flow: when Discord is
+# config-gated (DISCORD_BOT_TOKEN missing), a `Wants=` on a disabled
+# service has systemd try to start it anyway, which crashloops the
+# Discord bot every time send fires. The HITL approval happens before
+# this unit picks up a row (approval_state must already be 'approved'
+# at send time), so send doesn't need Discord to be up at runtime.
+
+[Service]
+Type=oneshot
+User=support
+Group=support
+WorkingDirectory=/home/support/ai_marketing_stack-sales-agent-private
+EnvironmentFile=/home/support/ai_marketing_stack-sales-agent-private/.env
+ExecStart=/home/support/ai_marketing_stack-sales-agent-private/.venv/bin/python -m sales_agent.mail.run_send_approved
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=glitch-sales-send
+TimeoutStartSec=900

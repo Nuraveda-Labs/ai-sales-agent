@@ -1,0 +1,15 @@
+[Unit]
+Description=AI Sales Agent — LLM drafter (writes pending email_drafts for HITL)
+After=network.target postgresql.service
+
+[Service]
+Type=oneshot
+User=support
+Group=support
+WorkingDirectory=/home/support/ai_marketing_stack-sales-agent-private
+EnvironmentFile=/home/support/ai_marketing_stack-sales-agent-private/.env
+ExecStart=/home/support/ai_marketing_stack-sales-agent-private/.venv/bin/python -m sales_agent.agent.run_draft_batch --limit 5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=glitch-sales-draft
+TimeoutStartSec=900

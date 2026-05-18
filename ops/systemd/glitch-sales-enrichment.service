@@ -1,0 +1,15 @@
+[Unit]
+Description=AI Sales Agent — enrichment pass (site classify + contact email)
+After=network.target postgresql.service
+
+[Service]
+Type=oneshot
+User=support
+Group=support
+WorkingDirectory=/home/support/ai_marketing_stack-sales-agent-private
+EnvironmentFile=/home/support/ai_marketing_stack-sales-agent-private/.env
+ExecStart=/home/support/ai_marketing_stack-sales-agent-private/.venv/bin/python -m sales_agent.enrichment.run_enrichment
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=glitch-sales-enrichment
+TimeoutStartSec=1800

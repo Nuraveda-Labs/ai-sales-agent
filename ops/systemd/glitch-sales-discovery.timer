@@ -1,0 +1,11 @@
+[Unit]
+Description=AI Sales Agent — discovery scan, fires once daily at 13:00 UTC
+Requires=glitch-sales-discovery.service
+
+[Timer]
+OnCalendar=*-*-* 13:00:00 UTC
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

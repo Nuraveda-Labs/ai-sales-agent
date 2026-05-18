@@ -1,0 +1,11 @@
+[Unit]
+Description=AI Sales Agent — drafter, fires every 4h at :45 UTC
+Requires=glitch-sales-draft.service
+
+[Timer]
+OnCalendar=*-*-* 04,08,12,16,20,00:45:00 UTC
+Persistent=true
+RandomizedDelaySec=180
+
+[Install]
+WantedBy=timers.target
