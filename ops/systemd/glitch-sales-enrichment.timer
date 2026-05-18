@@ -1,6 +1,6 @@
 [Unit]
 Description=AI Sales Agent — enrichment pass, fires every 2h at :30 UTC
-Requires=glitch-sales-enrichment.service
+Requires=ai-sales-enrichment.service
 
 [Timer]
 OnCalendar=*-*-* 00,02,04,06,08,10,12,14,16,18,20,22:30:00 UTC

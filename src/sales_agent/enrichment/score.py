@@ -52,7 +52,7 @@ CHAIN_KEYWORDS: tuple[str, ...] = (
     "moksha <industry>",                          # 3+ locations in cohort
     "fika",
     "purple moose",
-    "maryjane",                                 # MaryJane's Weed Dispensary
+    "maryjane",                                 # MaryJane's Weed business
 )
 
 # Platform fit bonus. After the Apr-2026 product reframe, the pitch is
@@ -64,9 +64,9 @@ CHAIN_KEYWORDS: tuple[str, ...] = (
 _PLATFORM_BONUS: dict[str, int] = {
     "none":      25,   # no site at all → easiest "we'll get you online" pitch
     "brochure":  25,   # Squarespace/Wix/WP without real ordering
-    "dutchie":   20,   # working stack, AI SEO upgrade pitch lands
-    "blaze":     20,   # same shape as <tool>
-    "tendypos":  20,   # same shape
+    "<vertical-tool-2>":   20,   # working stack, AI SEO upgrade pitch lands
+    "<vertical-tool-3>":     20,   # same shape as <tool>
+    "<vertical-tool-1>":  20,   # same shape
     "shopify":  -50,   # chains; wrong ICP
     "custom":     0,
 }

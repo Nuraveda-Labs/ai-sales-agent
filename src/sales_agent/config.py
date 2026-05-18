@@ -22,14 +22,14 @@ class Settings(BaseSettings):
     postgres_rw_url: str = ""
 
     # ── GCP — shared SA + project for Places + Vertex AI ──────────────────
-    gcp_project_id: str = "capable-boulder-487806-j0"
+    gcp_project_id: str = "<your-gcp-project>"
     gcp_target_sa: str = (
-        "glitch-vertex-ai@capable-boulder-487806-j0.iam.gserviceaccount.com"
+        "<your-sa>@<your-project>.iam.gserviceaccount.com"
     )
     gcp_vertex_region: str = "us-central1"
     # Backward-compat alias — older code paths read gcp_places_target_sa.
     gcp_places_target_sa: str = (
-        "glitch-vertex-ai@capable-boulder-487806-j0.iam.gserviceaccount.com"
+        "<your-sa>@<your-project>.iam.gserviceaccount.com"
     )
     discovery_center_lat: float = 43.7615
     discovery_center_lng: float = -79.4111

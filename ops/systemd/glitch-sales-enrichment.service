@@ -11,5 +11,5 @@ EnvironmentFile=/home/support/ai_marketing_stack-sales-agent-private/.env
 ExecStart=/home/support/ai_marketing_stack-sales-agent-private/.venv/bin/python -m sales_agent.enrichment.run_enrichment
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=glitch-sales-enrichment
+SyslogIdentifier=ai-sales-enrichment
 TimeoutStartSec=1800

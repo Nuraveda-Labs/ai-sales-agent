@@ -24,7 +24,7 @@ from sales_agent.config import settings
 from sales_agent.db.models import EmailDraft, Lead
 
 DEMO_URL = "https://example-brand.com"
-LANDING_URL = "https://grow.example.com/budz"
+LANDING_URL = "https://landing.example.com"
 # Full name on the sign-off — the body voice is casual lowercase but the
 # signature is a real name (Title Case proper noun) so the recipient
 # knows who's emailing them.

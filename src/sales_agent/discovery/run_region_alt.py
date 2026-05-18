@@ -11,7 +11,7 @@ Coverage:
   Yonge Street, Queen Street West / Queen West, Kensington Market,
   Liberty Village, King Street West / King West, The Annex,
   Dundas West, Roncesvalles, Leslieville, The Beach, Distillery
-- Two query templates per corridor (<industry> / dispensary)
+- Two query templates per corridor (<industry> / business)
 
 Dedup is automatic via LeadRepo.upsert (source, source_id) — anything
 the GTA pass already pulled stays untouched, only new ones land.
@@ -19,7 +19,7 @@ the GTA pass already pulled stays untouched, only new ones land.
 Usage:
     cd /home/support/ai_marketing_stack-sales-agent
     source .venv/bin/activate
-    PYTHONPATH=src python3 -m sales_agent.discovery.run_downtown
+    PYTHONPATH=src python3 -m sales_agent.discovery.run_region_alt
 """
 
 from __future__ import annotations
@@ -31,7 +31,7 @@ from typing import Any
 
 from sales_agent.db import LeadRepo, pool
 from sales_agent.discovery.google_places import default_client
-from sales_agent.discovery.run_north_york import place_to_lead
+from sales_agent.discovery.run_region import place_to_lead
 
 logger = logging.getLogger(__name__)
 
@@ -54,7 +54,7 @@ CORRIDORS = (
 
 QUERY_TEMPLATES = (
     "<industry> store {area}",
-    "dispensary {area}",
+    "business {area}",
 )
 
 

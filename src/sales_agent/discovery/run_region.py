@@ -8,7 +8,7 @@ ones (LeadRepo.upsert is COALESCE-protected).
 Usage:
     cd /home/support/ai_marketing_stack-sales-agent
     source .venv/bin/activate
-    PYTHONPATH=src python3 -m sales_agent.discovery.run_north_york
+    PYTHONPATH=src python3 -m sales_agent.discovery.run_region
 """
 
 from __future__ import annotations
@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 QUERIES: tuple[str, ...] = (
     "<industry> store <region> <region>",
     "<industry> store York <region>",
-    "dispensary <region> <region>",
+    "business <region> <region>",
     "weed store <region> <region>",
 )
 

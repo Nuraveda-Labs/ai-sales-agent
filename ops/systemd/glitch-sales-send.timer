@@ -1,6 +1,6 @@
 [Unit]
 Description=AI Sales Agent — send approved drafts, fires every 30 min
-Requires=glitch-sales-send.service
+Requires=ai-sales-send.service
 
 [Timer]
 OnCalendar=*:0/30

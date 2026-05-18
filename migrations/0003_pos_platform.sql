@@ -9,9 +9,9 @@
 --   none      — no website at all (or fetch failed)
 --   brochure  — apex on Squarespace / Wix / WordPress with no embedded
 --                shop or external shop subdomain
---   dutchie   — <tool>.com storefront
---   blaze     — <tool>.* subdomain pattern, /menu/ paths)
---   tendypos  — <tool>.api.unoapp.io)
+--   <vertical-tool-2>   — <tool>.com storefront
+--   <vertical-tool-3>     — <tool>.* subdomain pattern, /menu/ paths)
+--   <vertical-tool-1>  — <tool>.api.unoapp.io)
 --   shopify   — Shopify-powered (mostly chains; wrong ICP)
 --   custom    — anything else not classifiable into the above
 --
@@ -30,7 +30,7 @@ DO $$ BEGIN
     ALTER TABLE sales_agent.leads
       ADD CONSTRAINT leads_pos_platform_chk CHECK (
         pos_platform IS NULL
-        OR pos_platform IN ('none','brochure','dutchie','blaze','tendypos','shopify','custom')
+        OR pos_platform IN ('none','brochure','<vertical-tool-2>','<vertical-tool-3>','<vertical-tool-1>','shopify','custom')
       );
   END IF;
 END $$;

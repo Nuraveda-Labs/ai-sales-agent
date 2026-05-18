@@ -157,7 +157,7 @@ async def send_plain(
         "subject":  draft.subject,
         "text":     body_text,
         # Resend tags: ASCII letters, numbers, underscores, dashes only.
-        # recipe_key carries platform:hook_name (e.g. "blaze:switching_cost_safe")
+        # recipe_key carries platform:hook_name (e.g. "<vertical-tool-3>:switching_cost_safe")
         # so the colon needs to be sanitized for tag use; the DB still stores
         # the canonical colon form.
         "tags":     [

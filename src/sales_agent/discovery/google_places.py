@@ -3,7 +3,7 @@
 Auth flow:
 - Application Default Credentials pick up the box's attached SA
   (`<projectnum>-compute@developer.gserviceaccount.com`).
-- That SA impersonates `glitch-vertex-ai@…iam.gserviceaccount.com` via
+- That SA impersonates `<your-sa>@…iam.gserviceaccount.com` via
   `google.auth.impersonated_credentials.Credentials` so calls are
   attributed to the operations SA.
 - Refresh is automatic when the cached token is invalid; the wrapper

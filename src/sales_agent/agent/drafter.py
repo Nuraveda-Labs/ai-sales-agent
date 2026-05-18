@@ -21,7 +21,7 @@ captioning.
 
 Auth (LLM mode): same SA-impersonation pattern as the Places worker.
 ADC picks up the box's attached Compute SA, which impersonates
-`glitch-vertex-ai@…` so all Vertex calls are attributed to the
+`<your-sa>@…` so all Vertex calls are attributed to the
 operations SA.
 
 Output: `DraftResult` with subject_variant, subject, body, and token

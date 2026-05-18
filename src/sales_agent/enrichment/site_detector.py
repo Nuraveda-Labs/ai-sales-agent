@@ -5,7 +5,7 @@ The categories were derived empirically from the 77-lead <region> cohort
 probe (see `migrations/0003_pos_platform.sql` header for definitions).
 
 Detection priority (highest signal first):
-    tendypos > dutchie > blaze > shopify > brochure > custom > none
+    <vertical-tool-1> > <vertical-tool-2> > <vertical-tool-3> > shopify > brochure > custom > none
 
 We follow shop subdomains (`shop.*`, `order.*`, `store.*`, `menu.*`)
 because for <industry> retail the apex domain is often a Squarespace/WP
@@ -26,20 +26,20 @@ import httpx
 logger = logging.getLogger(__name__)
 
 PosPlatform = Literal[
-    "none", "brochure", "dutchie", "blaze", "tendypos", "shopify", "custom",
+    "none", "brochure", "<vertical-tool-2>", "<vertical-tool-3>", "<vertical-tool-1>", "shopify", "custom",
 ]
 
 
 # Pattern, in priority order. First match wins.
 _POS_PATTERNS: tuple[tuple[PosPlatform, re.Pattern[str]], ...] = (
-    ("tendypos", re.compile(
-        r"tendy[a-z]*\.api\.unoapp\.io|tendypos\.com|tendy-budler", re.I,
+    ("<vertical-tool-1>", re.compile(
+        r"tendy[a-z]*\.api\.unoapp\.io|<vertical-tool-1>\.com|tendy-budler", re.I,
     )),
-    ("dutchie", re.compile(
-        r"dutchie\.com|embed\.dutchie|dutchie\.menu|cdn\.dutchie", re.I,
+    ("<vertical-tool-2>", re.compile(
+        r"<vertical-tool-2>\.com|embed\.<vertical-tool-2>|<vertical-tool-2>\.menu|cdn\.<vertical-tool-2>", re.I,
     )),
-    ("blaze", re.compile(
-        r"blaze\.me|blazenow|blaze-now|cdn\.blaze[a-z]*\.io", re.I,
+    ("<vertical-tool-3>", re.compile(
+        r"<vertical-tool-3>\.me|<vertical-tool-3>now|<vertical-tool-3>-now|cdn\.<vertical-tool-3>[a-z]*\.io", re.I,
     )),
     ("shopify", re.compile(
         r"cdn\.shopify\.com|myshopify\.com|/cdn/shop/", re.I,
@@ -62,8 +62,8 @@ _SHOP_LINK_RE = re.compile(
 )
 
 # <tool>
-# even when the bare `blaze.me` substring isn't in the HTML.
-_BLAZE_PATH_HINT = re.compile(
+# even when the bare `<vertical-tool-3>.me` substring isn't in the HTML.
+_<vertical-tool-3>_PATH_HINT = re.compile(
     r'https?://shop\.[a-z0-9.\-]+/menu/[a-z0-9.\-/_]+', re.I,
 )
 
@@ -95,8 +95,8 @@ def _classify(html_combined: str, shop_url: str | None) -> PosPlatform | None:
         if rx.search(html_combined):
             return tag
     # <tool>, when patterns missed.
-    if shop_url and _BLAZE_PATH_HINT.search(shop_url):
-        return "blaze"
+    if shop_url and _<vertical-tool-3>_PATH_HINT.search(shop_url):
+        return "<vertical-tool-3>"
     return None
 
 
@@ -160,7 +160,7 @@ def pos_to_legacy(pos: PosPlatform) -> LegacySiteStatus:
         return "none"
     if pos == "brochure":
         return "builder"          # closest legacy bucket
-    if pos in ("dutchie", "blaze", "tendypos", "shopify"):
+    if pos in ("<vertical-tool-2>", "<vertical-tool-3>", "<vertical-tool-1>", "shopify"):
         return "custom"           # they have a real ecom backend
     return "custom"
 

@@ -29,7 +29,7 @@ LeadStatus = Literal[
 CurrentSiteStatus = Literal["none", "linktree", "builder", "lightspeed", "custom"]
 
 PosPlatform = Literal[
-    "none", "brochure", "dutchie", "blaze", "tendypos", "shopify", "custom",
+    "none", "brochure", "<vertical-tool-2>", "<vertical-tool-3>", "<vertical-tool-1>", "shopify", "custom",
 ]
 
 Source = Literal["google_places", "agco", "manual"]

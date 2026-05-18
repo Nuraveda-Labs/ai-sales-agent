@@ -11,5 +11,5 @@ EnvironmentFile=/home/support/ai_marketing_stack-sales-agent-private/.env
 ExecStart=/home/support/ai_marketing_stack-sales-agent-private/.venv/bin/python -m sales_agent.agent.run_draft_batch --limit 5
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=glitch-sales-draft
+SyslogIdentifier=ai-sales-draft
 TimeoutStartSec=900

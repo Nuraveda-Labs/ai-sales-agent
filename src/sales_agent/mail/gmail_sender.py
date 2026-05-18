@@ -8,8 +8,8 @@ Sent folder.
 
 Auth chain (keyless — no SA JSON file on disk):
   Compute SA (default ADC on this box)
-    → has roles/iam.serviceAccountTokenCreator on glitch-vertex-ai SA
-      → glitch-vertex-ai SA has Workspace domain-wide delegation
+    → has roles/iam.serviceAccountTokenCreator on <your-sa> SA
+      → <your-sa> SA has Workspace domain-wide delegation
         granted with scope https://www.googleapis.com/auth/gmail.send
         → mints an access token with `subject="support@..."` so the
           send is performed AS that Workspace user.

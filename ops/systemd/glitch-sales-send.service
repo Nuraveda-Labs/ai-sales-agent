@@ -1,7 +1,7 @@
 [Unit]
 Description=AI Sales Agent — send approved drafts (LIVE EMAILS)
 After=network.target postgresql.service
-# Intentionally NOT `Wants=glitch-sales-discord.service` even though
+# Intentionally NOT `Wants=ai-sales-discord.service` even though
 # the drafter+HITL+send pipeline is one logical flow: when Discord is
 # config-gated (DISCORD_BOT_TOKEN missing), a `Wants=` on a disabled
 # service has systemd try to start it anyway, which crashloops the
@@ -18,5 +18,5 @@ EnvironmentFile=/home/support/ai_marketing_stack-sales-agent-private/.env
 ExecStart=/home/support/ai_marketing_stack-sales-agent-private/.venv/bin/python -m sales_agent.mail.run_send_approved
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=glitch-sales-send
+SyslogIdentifier=ai-sales-send
 TimeoutStartSec=900

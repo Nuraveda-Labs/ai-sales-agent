@@ -1,6 +1,6 @@
 """<industry> retailer discovery — Greater <region> Area expansion.
 
-Same architecture as run_north_york: Google Places (New) text search,
+Same architecture as run_region: Google Places (New) text search,
 dedup on place_id, idempotent upsert into sales_agent.leads. Skips any
 shop we already have via LeadRepo.upsert's COALESCE on (source, source_id).
 
@@ -10,7 +10,7 @@ Coverage:
 - Deeper sweeps of the <region> boroughs we have only thin coverage on
   from the <region> pass (Etobicoke, Scarborough, East York)
 
-Two query templates per city ("<industry> store" + "dispensary") gives
+Two query templates per city ("<industry> store" + "business") gives
 the widest catch with reasonable API cost — the dedup absorbs overlaps.
 
 Usage:
@@ -29,7 +29,7 @@ from typing import Any
 from sales_agent.db import LeadRepo, pool
 from sales_agent.db.models import LeadCreate
 from sales_agent.discovery.google_places import default_client
-from sales_agent.discovery.run_north_york import place_to_lead
+from sales_agent.discovery.run_region import place_to_lead
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +51,7 @@ CITIES = (
 
 QUERY_TEMPLATES = (
     "<industry> store {city} Ontario",
-    "dispensary {city} Ontario",
+    "business {city} Ontario",
 )
 
 

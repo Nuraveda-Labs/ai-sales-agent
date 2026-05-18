@@ -577,7 +577,7 @@ class MemoryRepo:
         assert row is not None
         mem = _to_memory(row)
         # Brain mirror (GROW-BIND-2): also report the write to
-        # glitch-brain-mcp so sibling agents on the same brand can see
+        # brain-mcp so sibling agents on the same brand can see
         # what Sales just did via team_state / recent_activity /
         # briefing. Silently no-ops when BSK-003 isn't configured for
         # the current SALES_AGENT_BRAND_SLUG.

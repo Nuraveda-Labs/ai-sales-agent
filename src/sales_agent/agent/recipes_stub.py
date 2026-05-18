@@ -56,5 +56,5 @@ _PLACEHOLDER = Hook(
 # Stub: one placeholder hook per platform. Override in playbook.
 RECIPES: dict[str, Recipe] = {
     key: Recipe(key=key, hooks=(_PLACEHOLDER,))
-    for key in ("none", "brochure", "dutchie", "blaze", "tendypos", "shopify", "custom")
+    for key in ("none", "brochure", "<vertical-tool-2>", "<vertical-tool-3>", "<vertical-tool-1>", "shopify", "custom")
 }

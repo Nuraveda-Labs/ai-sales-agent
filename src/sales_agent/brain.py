@@ -1,7 +1,7 @@
 """BSK-003 → brain bridge (GROW-BIND-2, 2026-05-17).
 
 Mirrors every Sales agent memory write onto the shared
-`glitch-brain-mcp` so sibling agents on the same brand can see what
+`brain-mcp` so sibling agents on the same brand can see what
 Sales just did (drafts produced, sends executed, lead state moves).
 
 This is **additive**: the existing `sales_agent.agent_memory`
@@ -11,7 +11,7 @@ memory. The brain mirror is the sibling-visible coordination layer.
 Wiring contract:
   - Env `GLITCH_BRAIN_MCP_URL` overrides the brain URL.
   - Env `SALES_AGENT_BRAND_SLUG` names the brand the Sales agent is
-    currently running for (e.g. `glitch-executor`). The bridge then
+    currently running for (e.g. `example-tenant`). The bridge then
     looks up `BRAIN_TOKEN_BSK_003_<UPPER_SNAKED_SLUG>` from env to
     get the bearer.
   - Backward-compat fallback: bare `BRAIN_TOKEN_BSK_003` if it's set
@@ -23,7 +23,7 @@ Wiring contract:
     or fail the local insert.
 
 Per the brands × agents matrix in memory (`brands_agent_matrix.md`),
-BSK-003 Sales is currently enrolled only for `glitch-executor`. The
+BSK-003 Sales is currently enrolled only for `example-tenant`. The
 env-driven design keeps the bridge ready for future enrolments
 without code change — drop the new token into the consolidated `.env`
 and switch `SALES_AGENT_BRAND_SLUG` per deployment.
