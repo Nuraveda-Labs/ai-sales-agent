@@ -12,7 +12,7 @@ The agent builds a lead funnel from public sources, drafts personalised opening 
 ## Quick start
 
 ```bash
-git clone https://gitlab.com/glitch-grow/ai-sales-agent.git
+git clone https://gitlab.com/mesh-pilot/ai-sales-agent.git
 # or: git clone https://codeberg.org/Glitch_Exec_Lab/ai-sales-agent.git
 cd ai-sales-agent
 
@@ -54,18 +54,18 @@ playbooks/      # JSON brief templates per outreach play
 
 | Agent | Domain | Repo |
 |---|---|---|
-| AI Ads Agent | Meta / Google / TikTok / Amazon Ads | [glitch-grow/ai-ads-agent](https://gitlab.com/glitch-grow/ai-ads-agent) |
+| AI Ads Agent | Meta / Google / TikTok / Amazon Ads | [mesh-pilot/ai-ads-agent](https://gitlab.com/mesh-pilot/ai-ads-agent) |
 | **AI Sales Agent** | This repo | — |
-| AI Social Agent | Multi-platform posting + ORM | [glitch-grow/ai-social-agent](https://gitlab.com/glitch-grow/ai-social-agent) |
-| AI UGC Agent | Vertical video ad pipeline | [glitch-grow/ai-ugc-agent](https://gitlab.com/glitch-grow/ai-ugc-agent) |
-| AI Voice Agent | LiveKit-based phone agent | [glitch-grow/ai-voice-agent](https://gitlab.com/glitch-grow/ai-voice-agent) |
-| AI SEO Agent | Shopify SEO autopilot | [glitch-grow/ai-seo-agent](https://gitlab.com/glitch-grow/ai-seo-agent) |
+| AI Social Agent | Multi-platform posting + ORM | [mesh-pilot/ai-social-agent](https://gitlab.com/mesh-pilot/ai-social-agent) |
+| AI UGC Agent | Vertical video ad pipeline | [mesh-pilot/ai-ugc-agent](https://gitlab.com/mesh-pilot/ai-ugc-agent) |
+| AI Voice Agent | LiveKit-based phone agent | [mesh-pilot/ai-voice-agent](https://gitlab.com/mesh-pilot/ai-voice-agent) |
+| AI SEO Agent | Shopify SEO autopilot | [mesh-pilot/ai-seo-agent](https://gitlab.com/mesh-pilot/ai-seo-agent) |
 
 In production they're orchestrated by **[Mesh Pilot](https://meshpilot.app)** — the closed-source cockpit that runs all six in concert with shared brand context, a single web approval inbox, and cross-agent handoffs.
 
 ## Mirrors
 
-- GitLab: [`glitch-grow/ai-sales-agent`](https://gitlab.com/glitch-grow/ai-sales-agent)
+- GitLab: [`mesh-pilot/ai-sales-agent`](https://gitlab.com/mesh-pilot/ai-sales-agent)
 - Codeberg: [`Glitch_Exec_Lab/ai-sales-agent`](https://codeberg.org/Glitch_Exec_Lab/ai-sales-agent)
 
 ## License
